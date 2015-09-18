@@ -29,6 +29,7 @@ namespace Warmups
             Console.WriteLine(prog.FrontAndBack("LeBronJames", 3));
             Console.WriteLine(prog.TakeTwoFromPosition("Danking", 2));
             Console.WriteLine(prog.HasBad("xbadassery"));
+            Console.WriteLine(prog.AtFirst("hello"));
 
             Console.ReadLine();
         }
@@ -174,6 +175,24 @@ namespace Warmups
         //17. AtFirst
         public string AtFirst(string str)
         {
+            if (str.Length == 1)
+            {
+                return String.Format("{0}@", str.Substring(0, 1));
+            }
+            else if (str.Length == 0)
+            {
+                return String.Format("@@");
+            }
+            else
+            {
+                return String.Format(str.Substring(0, 2));
+            }
+        }
+
+        //18. LastChars
+        public string LastChars(string str)
+        {
+
         }
     }
 }

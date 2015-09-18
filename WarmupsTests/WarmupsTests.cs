@@ -155,6 +155,15 @@ namespace WarmupsTests
         }
 
         //17. AtFirst
+        [TestCase("hello", "he")]
+        [TestCase("h", "h@")]
+        public void AtFirst(string a, string expected)
+        {
+            string result = Testwarmup.AtFirst(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //18. LastChars
 
     }
 }
