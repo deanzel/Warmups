@@ -82,13 +82,36 @@ namespace WarmupsTests
             string result = Testwarmup.LongInMiddle(a, b);
             Assert.AreEqual(result, expected);
         }
-        //9. Rotateleft2
+        //9. RotateLeft2
         [TestCase("kawaii", "waiika")]
-        public void Rotateleft2(string a, string expected)
+        public void RotateLeft2(string a, string expected)
         {
-            string result = Testwarmup.Rotateleft2(a);
+            string result = Testwarmup.RotateLeft2(a);
             Assert.AreEqual(result, expected);
         }
+        //10. RotateRight2
+        [TestCase("Swagerific", "icSwagerif")]
+        public void RotateRight2(string a, string expected)
+        {
+            string result = Testwarmup.RotateRight2(a);
+            Assert.AreEqual(result, expected);
+        }
+        //11. TakeOne (used ToCharArray method for fun instead of SubString)
+        [TestCase("Cleveland", true, 'C')]
+        [TestCase("Cleveland", false, 'd')]
+        public void TakeOne(string a, bool fromFront, char expected)
+        {
+            char result = Testwarmup.TakeOne(a, fromFront);
+            Assert.AreEqual(result, expected);
+        }
+        //12. MiddleTwo
+        [TestCase("DeanChoi", "nC")]
+        public void MiddleTwo(string a, string expected)
+        {
+            string result = Testwarmup.MiddleTwo(a);
+            Assert.AreEqual(result, expected);
+        }
+
     }
 }
 

@@ -21,7 +21,10 @@ namespace Warmups
             Console.WriteLine(prog.FirstHalf("WhereAreYou?"));
             Console.WriteLine(prog.TrimOne("Danking"));
             Console.WriteLine(prog.LongInMiddle("Baller", "time"));
-            Console.WriteLine(prog.Rotateleft2("kawaii"));
+            Console.WriteLine(prog.RotateLeft2("kawaii"));
+            Console.WriteLine(prog.RotateRight2("Swagerific"));
+            Console.WriteLine(prog.TakeOne("Cleveland", false));
+            Console.WriteLine(prog.MiddleTwo("DeanChoi"));
 
             Console.ReadLine();
         }
@@ -84,10 +87,39 @@ namespace Warmups
             }
         }
 
-        //9. Rotateleft2
-        public string Rotateleft2(string str)
+        //9. RotateLeft2
+        public string RotateLeft2(string str)
         {
             return string.Format("{0}{1}", str.Substring(2, str.Length - 2), str.Substring(0, 2));
+        }
+
+        //10. RotateRight2
+        public string RotateRight2(string str)
+        {
+            return string.Format("{0}{1}", str.Substring(str.Length - 2, 2), str.Substring(0, str.Length - 2));
+        }
+
+        //11. TakeOne (used ToCharArray method for fun instead of SubString)
+        public char TakeOne(string str, bool fromFront)
+        {
+            char[] strArray = str.ToCharArray();
+            if (fromFront == true)
+            {
+                char firstLetter = strArray[0];
+                return firstLetter;
+            }
+
+            else
+            {
+                char lastLetter = strArray[str.Length - 1];
+                return lastLetter;
+            }
+        }
+
+        //12. MiddleTwo
+        public string MiddleTwo(string str)
+        {
+            return string.Format(str.Substring(str.Length/2 - 1, 2));
         }
     }
 }
