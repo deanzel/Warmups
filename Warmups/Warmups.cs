@@ -25,6 +25,10 @@ namespace Warmups
             Console.WriteLine(prog.RotateRight2("Swagerific"));
             Console.WriteLine(prog.TakeOne("Cleveland", false));
             Console.WriteLine(prog.MiddleTwo("DeanChoi"));
+            Console.WriteLine(prog.EndsWithLy("Holy Moly"));
+            Console.WriteLine(prog.FrontAndBack("LeBronJames", 3));
+            Console.WriteLine(prog.TakeTwoFromPosition("Danking", 2));
+            Console.WriteLine(prog.HasBad("xbadassery"));
 
             Console.ReadLine();
         }
@@ -120,6 +124,56 @@ namespace Warmups
         public string MiddleTwo(string str)
         {
             return string.Format(str.Substring(str.Length/2 - 1, 2));
+        }
+
+        //13. EndsWithLy
+        public bool EndsWithLy(string str)
+        {
+            if (str.EndsWith("ly"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //14. FrontAndBack
+        public string FrontAndBack(string str, int n)
+        {
+            return String.Format("{0}{1}", str.Substring(0, n), str.Substring(str.Length - 3, n));
+        }
+
+        //15. TakeTwoFromPosition
+        public string TakeTwoFromPosition(string str, int n)
+        {
+            if (n > str.Length - 2 || n < 0)
+            {
+                return String.Format(str.Substring(0, 2));
+            }
+            else
+            {
+                return String.Format(str.Substring(n, 2));
+            }
+        }
+
+        //16. HasBad
+        public bool HasBad(string str)
+        {
+            if (str.IndexOf("bad") == 0 || str.IndexOf("bad") == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //17. AtFirst
+        public string AtFirst(string str)
+        {
         }
     }
 }

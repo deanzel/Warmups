@@ -54,6 +54,7 @@ namespace WarmupsTests
             string result = Testwarmup.InsertWord(a, b);
             Assert.AreEqual(result, expected);
         }
+
         //5. MultipleEndings
         [TestCase("Super", "ererer")]
         public void MultipleEndings(string a, string expected)
@@ -61,6 +62,7 @@ namespace WarmupsTests
             string result = Testwarmup.MultipleEndings(a);
             Assert.AreEqual(result, expected);
         }
+
         //6. FirstHalf
         [TestCase("WhereAreYou?", "WhereA")]
         public void FirstHalf(string a, string expected)
@@ -68,6 +70,7 @@ namespace WarmupsTests
             string result = Testwarmup.FirstHalf(a);
             Assert.AreEqual(result, expected);
         }
+
         //7. TrimOne
         [TestCase("Danking", "ankin")]
         public void TrimOne(string a, string expected)
@@ -75,6 +78,7 @@ namespace WarmupsTests
             string result = Testwarmup.TrimOne(a);
             Assert.AreEqual(result, expected);
         }
+
         //8. LongInMiddle
         [TestCase("Baller", "time", "timeBallertime")]
         public void LongInMiddle(string a, string b, string expected)
@@ -82,6 +86,7 @@ namespace WarmupsTests
             string result = Testwarmup.LongInMiddle(a, b);
             Assert.AreEqual(result, expected);
         }
+
         //9. RotateLeft2
         [TestCase("kawaii", "waiika")]
         public void RotateLeft2(string a, string expected)
@@ -89,6 +94,7 @@ namespace WarmupsTests
             string result = Testwarmup.RotateLeft2(a);
             Assert.AreEqual(result, expected);
         }
+
         //10. RotateRight2
         [TestCase("Swagerific", "icSwagerif")]
         public void RotateRight2(string a, string expected)
@@ -96,6 +102,7 @@ namespace WarmupsTests
             string result = Testwarmup.RotateRight2(a);
             Assert.AreEqual(result, expected);
         }
+
         //11. TakeOne (used ToCharArray method for fun instead of SubString)
         [TestCase("Cleveland", true, 'C')]
         [TestCase("Cleveland", false, 'd')]
@@ -104,6 +111,7 @@ namespace WarmupsTests
             char result = Testwarmup.TakeOne(a, fromFront);
             Assert.AreEqual(result, expected);
         }
+
         //12. MiddleTwo
         [TestCase("DeanChoi", "nC")]
         public void MiddleTwo(string a, string expected)
@@ -111,6 +119,42 @@ namespace WarmupsTests
             string result = Testwarmup.MiddleTwo(a);
             Assert.AreEqual(result, expected);
         }
+
+        //13. EndsWithLy
+        [TestCase("Holy Moly", true)]
+        public void EndsWithLy(string a, bool expected)
+        {
+            bool result = Testwarmup.EndsWithLy(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //14. FrontAndBack
+        [TestCase("LeBronJames", 3, "LeBmes")]
+        public void FrontAndBack(string a, int n, string expected)
+        {
+            string result = Testwarmup.FrontAndBack(a, 3);
+            Assert.AreEqual(result, expected);
+        }
+
+        //15. TakeTwoFromPosition
+        [TestCase("Danking", 2, "nk")]
+        [TestCase("Danking", 6, "Da")]
+        public void TakeTwoFromPosition(string a, int n, string expected)
+        {
+            string result = Testwarmup.TakeTwoFromPosition(a, n);
+            Assert.AreEqual(result, expected);
+        }
+
+        //16. HasBad
+        [TestCase("xbadassery", true)]
+        [TestCase("goinghard", false)]
+        public void HasBad(string a, bool expected)
+        {
+            bool result = Testwarmup.HasBad(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //17. AtFirst
 
     }
 }
