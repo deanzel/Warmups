@@ -47,6 +47,48 @@ namespace WarmupsTests
             Assert.AreEqual(resultString, expected);
         }
 
+        //4. InsertWord
+        [TestCase("[[]]", "DANK", "[[DANK]]")]
+        public void InsertWord(string a, string b, string expected)
+        {
+            string result = Testwarmup.InsertWord(a, b);
+            Assert.AreEqual(result, expected);
+        }
+        //5. MultipleEndings
+        [TestCase("Super", "ererer")]
+        public void MultipleEndings(string a, string expected)
+        {
+            string result = Testwarmup.MultipleEndings(a);
+            Assert.AreEqual(result, expected);
+        }
+        //6. FirstHalf
+        [TestCase("WhereAreYou?", "WhereA")]
+        public void FirstHalf(string a, string expected)
+        {
+            string result = Testwarmup.FirstHalf(a);
+            Assert.AreEqual(result, expected);
+        }
+        //7. TrimOne
+        [TestCase("Danking", "ankin")]
+        public void TrimOne(string a, string expected)
+        {
+            string result = Testwarmup.TrimOne(a);
+            Assert.AreEqual(result, expected);
+        }
+        //8. LongInMiddle
+        [TestCase("Baller", "time", "timeBallertime")]
+        public void LongInMiddle(string a, string b, string expected)
+        {
+            string result = Testwarmup.LongInMiddle(a, b);
+            Assert.AreEqual(result, expected);
+        }
+        //9. Rotateleft2
+        [TestCase("kawaii", "waiika")]
+        public void Rotateleft2(string a, string expected)
+        {
+            string result = Testwarmup.Rotateleft2(a);
+            Assert.AreEqual(result, expected);
+        }
     }
 }
 
