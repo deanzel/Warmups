@@ -30,6 +30,8 @@ namespace Warmups
             Console.WriteLine(prog.TakeTwoFromPosition("Danking", 2));
             Console.WriteLine(prog.HasBad("xbadassery"));
             Console.WriteLine(prog.AtFirst("hello"));
+            Console.WriteLine(prog.LastChars("YOLO", "totally"));
+            Console.WriteLine(prog.ConCat("abcd", "defg"));
 
             Console.ReadLine();
         }
@@ -190,7 +192,37 @@ namespace Warmups
         }
 
         //18. LastChars
-        public string LastChars(string str)
+        public string LastChars(string strA, string strB)
+        {
+            if (strA == "" && strB != "")
+            {
+                return String.Format("@{0}", strB.Substring(strB.Length - 1));
+            }
+            else if (strB == "" && strA != "")
+            {
+                return String.Format("{0}@", strA.Substring(0, 1));
+            }
+            else
+            {
+                return String.Format("{0}{1}", strA.Substring(0, 1), strB.Substring(strB.Length - 1));
+            }
+        }
+
+        //19. Concat
+        public string ConCat(string a, string b)
+        {
+            if (a.Substring(a.Length - 1) == b.Substring(0, 1))
+            {
+                return String.Format(String.Concat(a, b.Substring(1)));
+            }
+            else
+            {
+                return String.Format(String.Concat(a, b));
+            }
+        }
+
+        //20. SwapLast
+        public string SwapLast(string str)
         {
 
         }

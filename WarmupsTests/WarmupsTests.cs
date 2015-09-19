@@ -164,6 +164,25 @@ namespace WarmupsTests
         }
 
         //18. LastChars
+        [TestCase("YOLO", "totally", "Yy")]
+        [TestCase("h", "", "h@")]
+        [TestCase("", "D", "@D")]
+        public void LastChars(string a, string b, string expected)
+        {
+            string result = Testwarmup.LastChars(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //19. ConCat
+        [TestCase("abcd", "defg", "abcdefg")]
+        [TestCase("abcd", "efgh", "abcdefgh")]
+        public void ConCat(string a, string b, string expected)
+        {
+            string result = Testwarmup.ConCat(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //20. SwapLast
 
     }
 }
