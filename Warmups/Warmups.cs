@@ -32,6 +32,9 @@ namespace Warmups
             Console.WriteLine(prog.AtFirst("hello"));
             Console.WriteLine(prog.LastChars("YOLO", "totally"));
             Console.WriteLine(prog.ConCat("abcd", "defg"));
+            Console.WriteLine(prog.SwapLast("coding"));
+            Console.WriteLine(prog.FrontAgain("edited"));
+            Console.WriteLine(prog.MinCat("Hello", "java"));
 
             Console.ReadLine();
         }
@@ -223,6 +226,43 @@ namespace Warmups
 
         //20. SwapLast
         public string SwapLast(string str)
+        {
+            return String.Format("{0}{1}{2}", str.Substring(0, str.Length - 2), str.Substring(str.Length - 1),
+                str.Substring(str.Length - 2, 1));
+        }
+
+        //21. FrontAgain
+        public bool FrontAgain(string str)
+        {
+            if (str.Substring(0, 2) == str.Substring(str.Length - 2))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //22. MinCat
+        public string MinCat(string a, string b)
+        {
+            if (a.Length > b.Length)
+            {
+                return String.Format("{0}{1}", a.Substring(a.Length - b.Length), b);
+            }
+            else if (b.Length > a.Length)
+            {
+                return String.Format("{0}{1}", a, b.Substring(b.Length - a.Length));
+            }
+            else
+            {
+                return String.Concat(a, b);
+            }
+        }
+
+        //23. TweakFront
+        public string TweakFront(string str)
         {
 
         }

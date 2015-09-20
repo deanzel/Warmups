@@ -183,6 +183,34 @@ namespace WarmupsTests
         }
 
         //20. SwapLast
+        [TestCase("coding", "codign")]
+        public void SwapLast(string a, string expected)
+        {
+            string result = Testwarmup.SwapLast(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //21. FrontAgain
+        [TestCase("edited", true)]
+        [TestCase("edit", false)]
+        [TestCase("ed", true)]
+        public void FrontAgain(string a, bool expected)
+        {
+            bool result = Testwarmup.FrontAgain(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //22. MinCat
+        [TestCase("Hello", "Hi", "loHi")]
+        [TestCase("Hello", "java", "ellojava")]
+        [TestCase("java", "Hello", "javaello")]
+        public void MinCat(string a, string b, string expected)
+        {
+            string result = Testwarmup.MinCat(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //23. TweakFront
 
     }
 }
