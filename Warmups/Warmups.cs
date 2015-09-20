@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework.Constraints;
 
 namespace Warmups
 {
@@ -35,7 +36,10 @@ namespace Warmups
             Console.WriteLine(prog.SwapLast("coding"));
             Console.WriteLine(prog.FrontAgain("edited"));
             Console.WriteLine(prog.MinCat("Hello", "java"));
+            Console.WriteLine(prog.TweakFront("abedcf"));
+            Console.WriteLine(prog.StripX("xHxix"));
 
+            //
             Console.ReadLine();
         }
 
@@ -264,7 +268,43 @@ namespace Warmups
         //23. TweakFront
         public string TweakFront(string str)
         {
+            if (str.Substring(0, 2) == "ab")
+            {
+                return String.Format(str);
+            }
+            else if (str.Substring(0, 1) == "a")
+            {
+                return String.Format("a{0}", str.Substring(2));
+            }
+            else if (str.Substring(1, 1) == "b")
+            {
+                return String.Format(str.Substring(1));
+            }
+            else
+            {
+                return String.Format(str.Substring(2));
+            }
+        }
 
+        //24. StripX
+        public string StripX(string str)
+        {
+            if (str.Substring(0, 1) == "x" && str.Substring(str.Length - 1) == "x")
+            {
+                return String.Format(str.Substring(1, str.Length - 2));
+            }
+            else if (str.Substring(0, 1) == "x")
+            {
+                return String.Format(str.Substring(1));
+            }
+            else if (str.Substring(str.Length - 1) == "x")
+            {
+                return String.Format(str.Substring(0, str.Length - 1));
+            }
+            else
+            {
+                return String.Format(str);
+            }
         }
     }
 }

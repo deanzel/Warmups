@@ -211,7 +211,24 @@ namespace WarmupsTests
         }
 
         //23. TweakFront
+        [TestCase("Hello", "llo")]
+        [TestCase("away", "aay")]
+        [TestCase("abedcf", "abedcf")]
+        public void TweakFront(string a, string expected)
+        {
+            string result = Testwarmup.TweakFront(a);
+            Assert.AreEqual(result, expected);
+        }
 
+        //24. StripX
+        [TestCase("xHix", "Hi")]
+        [TestCase("xHi", "Hi")]
+        [TestCase("Hxix", "Hxi")]
+        public void StripX(string a, string expected)
+        {
+            string result = Testwarmup.StripX(a);
+            Assert.AreEqual(result, expected);
+        }
     }
 }
 
