@@ -416,8 +416,47 @@ namespace WarmupsTests
         }
 
         //19. SoAlone
+        [TestCase(13, 99, true)]
+        [TestCase(21, 19, true)]
+        [TestCase(13, 13, false)]
+        public void SoAlone(int a, int b, bool expected)
+        {
+            bool result = Testwarmup.SoAlone(a, b);
+            Assert.AreEqual(result, expected);
+        }
 
+        //20. RemoveDel
+        [TestCase("adelbc", "abc")]
+        [TestCase("adelHello", "aHello")]
+        [TestCase("adedbc", "adedbc")]
+        public void RemoveDel(string a, string expected)
+        {
+            string result = Testwarmup.RemoveDel(a);
+            Assert.AreEqual(result, expected);
+        }
 
+        //21. IxStart
+        [TestCase("mix snacks", true)]
+        [TestCase("pix snacks", true)]
+        [TestCase("piz snacks", false)]
+        public void IxStart(string a, bool expected)
+        {
+            bool result = Testwarmup.IxStart(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //22. StartOz
+        [TestCase("ozymandias", "oz")]
+        [TestCase("bzoo", "z")]
+        [TestCase("oboe", "o")]
+        [TestCase("Dean", "De")]
+        public void StartOz(string a, string expected)
+        {
+            string result = Testwarmup.StartOz(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //23. Max
     }
 }
 

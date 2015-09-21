@@ -59,6 +59,11 @@ namespace Warmups
             Console.WriteLine(prog.IcyHot(120, -1));
             Console.WriteLine(prog.Between10and20(12, 99));
             Console.WriteLine(prog.HasTeen(20, 19, 10));
+            Console.WriteLine(prog.SoAlone(13, 13));
+            Console.WriteLine(prog.RemoveDel("adeldank"));
+            Console.WriteLine(prog.IxStart("mix booze"));
+            Console.WriteLine(prog.StartOz("ozymandias"));
+
 
 
             Console.ReadLine();
@@ -545,7 +550,60 @@ namespace Warmups
         //19. SoAlone
         public bool SoAlone(int a, int b)
         {
+            if (((a <= 19 && a >= 13) && (b > 19 || b < 13)) || ((b <= 19 && b >= 13) && (a > 19 || a < 13)))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //20. RemoveDel
+        public string RemoveDel(string str)
+        {
+            if (str.IndexOf("del") == 1)
+            {
+                return String.Format("{0}{1}", str.Substring(0, 1), str.Substring(4));
+            }
+            return str;
+        }
+
+        //21. IxStart
+        public bool IxStart(string str)
+        {
+            if (str.Substring(1, 2) == "ix")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //22. StartOz
+        public string StartOz(string str)
+        {
+            if (str.Substring(0, 2) == "oz")
+            {
+                return "oz";
+            }
+            else if (str.Substring(0, 1) == "o")
+            {
+                return "o";
+            }
+            else if (str.Substring(1, 1) == "z")
+            {
+                return "z";
+            }
+            else
+            {
+                return String.Format(str.Substring(0, 2));
+            }
+        }
+
+        //23. Max
+        public int Max(int a, int b, int c)
+        {
+
 
         }
+
     }
 }
