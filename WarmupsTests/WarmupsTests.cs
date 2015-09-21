@@ -229,6 +229,30 @@ namespace WarmupsTests
             string result = Testwarmup.StripX(a);
             Assert.AreEqual(result, expected);
         }
+
+        //Conditionals Tests:
+
+        //1. MischieviousChildren
+        [TestCase(true, true, true)]
+        [TestCase(false, false, true)]
+        [TestCase(true, false, false)]
+        public void AreWeInTrouble(bool a, bool b, bool expected)
+        {
+            bool result = Testwarmup.AreWeInTrouble(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //2. SleepingIn
+        [TestCase(false, false, true)]
+        [TestCase(true, false, false)]
+        [TestCase(false, true, true)]
+        public void CanSleepIn(bool a, bool b, bool expected)
+        {
+            bool result = Testwarmup.CanSleepIn(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //3. SumDouble
     }
 }
 

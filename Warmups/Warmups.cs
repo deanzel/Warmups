@@ -39,7 +39,12 @@ namespace Warmups
             Console.WriteLine(prog.TweakFront("abedcf"));
             Console.WriteLine(prog.StripX("xHxix"));
 
-            //
+            //Conditionals Warmups
+            Console.WriteLine("\nDean's Conditionals Warmups:\n");
+            Console.WriteLine(prog.AreWeInTrouble(true, true));
+            Console.WriteLine(prog.CanSleepIn(true, false));
+
+
             Console.ReadLine();
         }
 
@@ -306,5 +311,32 @@ namespace Warmups
                 return String.Format(str);
             }
         }
+
+        //Conditionals Warmups
+
+        //1. MischieviousChildren
+        public bool AreWeInTrouble(bool aSmile, bool bSmile)
+        {
+            if ((aSmile == true && bSmile == true) || (aSmile == false && bSmile == false))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //2. SleepingIn
+        public bool CanSleepIn(bool isWeekday, bool isVacation)
+        {
+            if (isWeekday == false || isVacation == true)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //3. SumDouble
     }
 }
