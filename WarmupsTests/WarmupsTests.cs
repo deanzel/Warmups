@@ -325,6 +325,57 @@ namespace WarmupsTests
         }
 
         //10. MissingChar
+        [TestCase("kitten", 1, "ktten")]
+        [TestCase("kitten", 0, "itten")]
+        [TestCase("kitten", 4, "kittn")]
+        public void MissingChar(string a, int b, string expected)
+        {
+            string result = Testwarmup.MissingChar(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //11. FrontBack
+        [TestCase("deanzel", "leanzed")]
+        [TestCase("code", "eodc")]
+        [TestCase("ab", "ba")]
+        [TestCase("a", "a")]
+        public void FrontBack(string a, string expected)
+        {
+            string result = Testwarmup.FrontBack(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //12. Front3
+        [TestCase("Microsoft", "MicMicMic")]
+        [TestCase("Dankness", "DanDanDan")]
+        [TestCase("at", "atatat")]
+        public void Front3(string a, string expected)
+        {
+            string result = Testwarmup.Front3(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //13. BackAround
+        [TestCase("cat", "tcatt")]
+        [TestCase("Hello", "oHelloo")]
+        [TestCase("a", "aaa")]
+        public void BackAround(string a, string expected)
+        {
+            string result = Testwarmup.BackAround(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //14. Multiple3or5
+        [TestCase(3, true)]
+        [TestCase(10, true)]
+        [TestCase(8, false)]
+        public void Multiple3or5(int a, bool expected)
+        {
+            bool result = Testwarmup.Multiple3or5(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //15. StartHi
     }
 }
 

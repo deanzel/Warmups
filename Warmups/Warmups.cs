@@ -50,6 +50,11 @@ namespace Warmups
             Console.WriteLine(prog.NearHundred(198));
             Console.WriteLine(prog.PosNeg(-4, -5, true));
             Console.WriteLine(prog.NotString("candy"));
+            Console.WriteLine(prog.MissingChar("kitten", 1));
+            Console.WriteLine(prog.FrontBack("deanzel"));
+            Console.WriteLine(prog.Front3("Microsoft"));
+            Console.WriteLine(prog.BackAround("Hello"));
+            Console.WriteLine(prog.Multiple3or5(10));
 
             Console.ReadLine();
         }
@@ -438,6 +443,51 @@ namespace Warmups
 
         //10. MissingChar
         public string MissingChar(string str, int n)
+        {
+            return String.Format(str.Remove(n, 1));
+        }
+
+        //11. FrontBack
+        public string FrontBack(string str)
+        {
+            if (str.Length <= 1)
+            {
+                return String.Format(str);
+            }
+            return String.Format("{0}{1}{2}", str[str.Length - 1], str.Substring(1, str.Length - 2), str[0]);
+        }
+
+        //12. Front3
+        public string Front3(string str)
+        {
+            if (str.Length >= 3)
+            {
+                return String.Format("{0}{0}{0}", str.Substring(0, 3));
+            }
+            else
+            {
+                return String.Format(str + str + str);
+            }
+        }
+
+        //13. BackAround
+        public string BackAround(string str)
+        {
+            return String.Format("{0}{1}{0}", str[str.Length - 1], str);
+        }
+
+        //14. Multiple3or5
+        public bool Multiple3or5(int number)
+        {
+            if (number%3 == 0 || number%5 == 0)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        //15. StartHi
+        public bool StartHi(string str)
         {
 
         }
