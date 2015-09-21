@@ -43,7 +43,10 @@ namespace Warmups
             Console.WriteLine("\nDean's Conditionals Warmups:\n");
             Console.WriteLine(prog.AreWeInTrouble(true, true));
             Console.WriteLine(prog.CanSleepIn(true, false));
-
+            Console.WriteLine(prog.SumDouble(2, 2));
+            Console.WriteLine(prog.Diff21(23));
+            Console.WriteLine(prog.ParrotTrouble(true, 6));
+            Console.WriteLine(prog.Makes10(1, 9));
 
             Console.ReadLine();
         }
@@ -338,5 +341,55 @@ namespace Warmups
         }
 
         //3. SumDouble
+        public int SumDouble(int a, int b)
+        {
+            if (a == b)
+            {
+                return a*4;
+            }
+            else
+            {
+                return a + b;
+            }
+        }
+
+        //4. Diif21
+        public int Diff21(int n)
+        {
+            if (n > 21)
+            {
+                return (n - 21)*2;
+            }
+            else
+            {
+                return 21 - n;
+            }
+        }
+
+        //5. ParrotTrouble
+        public bool ParrotTrouble(bool isTalking, int hour)
+        {
+            if (isTalking == true && (hour < 7 || hour > 20))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //6. Makes10
+        public bool Makes10(int a, int b)
+        {
+            if (a == 10 || b == 10 || a + b == 10)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //7. NearHundred
+        public bool NearHundred(int n)
+        {
+
+        }
     }
 }

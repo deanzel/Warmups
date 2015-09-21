@@ -253,6 +253,46 @@ namespace WarmupsTests
         }
 
         //3. SumDouble
+        [TestCase(1, 2, 3)]
+        [TestCase(3, 2, 5)]
+        [TestCase(2, 2, 8)]
+        public void SumDouble(int a, int b, int expected)
+        {
+            int result = Testwarmup.SumDouble(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //4. Diff21
+        [TestCase(23, 4)]
+        [TestCase(10, 11)]
+        [TestCase(21, 0)]
+        public void Diff21(int a, int expected)
+        {
+            int result = Testwarmup.Diff21(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //5. ParrotTrouble
+        [TestCase(true, 6, true)]
+        [TestCase(true, 7, false)]
+        [TestCase(false, 6, false)]
+        public void ParrotTrouble(bool a, int b, bool expected)
+        {
+            bool result = Testwarmup.ParrotTrouble(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //6. Makes10
+        [TestCase(9, 10, true)]
+        [TestCase(9, 8, false)]
+        [TestCase(1, 9, true)]
+        public void Makes10(int a, int b, bool expected)
+        {
+            bool result = Testwarmup.Makes10(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //7. NearHundred
     }
 }
 
