@@ -457,6 +457,25 @@ namespace WarmupsTests
         }
 
         //23. Max
+        [TestCase(1, 2, 3, 3)]
+        [TestCase(2, 5, 1, 5)]
+        [TestCase(21, 5, 6, 21)]
+        public void Max(int a, int b, int c, int expected)
+        {
+            int result = Testwarmup.Max(a, b, c);
+            Assert.AreEqual(result, expected);
+        }
+
+        //24. Closer
+        [TestCase(13, 7, 0)]
+        [TestCase(8, 13, 8)]
+        [TestCase(13, 8, 8)]
+        public void Closer(int a, int b, int expected)
+        {
+            int result = Testwarmup.Closer(a, b);
+            Assert.AreEqual(result, expected);
+
+        }
     }
 }
 

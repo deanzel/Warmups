@@ -63,8 +63,8 @@ namespace Warmups
             Console.WriteLine(prog.RemoveDel("adeldank"));
             Console.WriteLine(prog.IxStart("mix booze"));
             Console.WriteLine(prog.StartOz("ozymandias"));
-
-
+            Console.WriteLine(prog.Max(1, 3, 2));
+            Console.WriteLine(prog.Closer(13, 7));
 
             Console.ReadLine();
         }
@@ -601,9 +601,33 @@ namespace Warmups
         //23. Max
         public int Max(int a, int b, int c)
         {
-
-
+            if (a >= b && a >= c)
+            {
+                return a;
+            }
+            else if
+                (b >= a && b >= c)
+            {
+                return b;
+            }
+            else
+            {
+                return c;
+            }
         }
 
+        //24. Closer
+        public int Closer(int a, int b)
+        {
+            if (Math.Abs(10 - a) > Math.Abs(10 - b))
+            {
+                return b;
+            }
+            else if (Math.Abs(10 - b) > Math.Abs(10 - a))
+            {
+                return a;
+            }
+            return 0;
+        }
     }
 }
