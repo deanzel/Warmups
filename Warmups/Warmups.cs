@@ -55,6 +55,11 @@ namespace Warmups
             Console.WriteLine(prog.Front3("Microsoft"));
             Console.WriteLine(prog.BackAround("Hello"));
             Console.WriteLine(prog.Multiple3or5(10));
+            Console.WriteLine(prog.StartHi("high up"));
+            Console.WriteLine(prog.IcyHot(120, -1));
+            Console.WriteLine(prog.Between10and20(12, 99));
+            Console.WriteLine(prog.HasTeen(20, 19, 10));
+
 
             Console.ReadLine();
         }
@@ -488,6 +493,57 @@ namespace Warmups
 
         //15. StartHi
         public bool StartHi(string str)
+        {
+            if (str.Length == 2)
+            {
+                if (str == "hi")
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else if (str.Substring(0, 3) == "hi ")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //16. IcyHot
+        public bool IcyHot(int temp1, int temp2)
+        {
+            if ((temp1 < 0 && temp2 > 100) || (temp1 > 100 && temp2 < 0))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //17. Between10and20
+        public bool Between10and20(int a, int b)
+        {
+            if ((a <= 20 && a >= 10) || (b <= 20 && b >= 10))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //18. HasTeen
+        public bool HasTeen(int a, int b, int c)
+        {
+            if ((a <= 19 && a >= 13) || (b <= 19 && b >= 13) || (c <= 19 && c >= 13))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //19. SoAlone
+        public bool SoAlone(int a, int b)
         {
 
         }

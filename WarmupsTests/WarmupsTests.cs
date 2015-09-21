@@ -376,6 +376,48 @@ namespace WarmupsTests
         }
 
         //15. StartHi
+        [TestCase("hi there", true)]
+        [TestCase("hi", true)]
+        [TestCase("high up", false)]
+        public void StartHi(string a, bool expected)
+        {
+            bool result = Testwarmup.StartHi(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //16. IcyHot
+        [TestCase(120, -1, true)]
+        [TestCase(-1, 120, true)]
+        [TestCase(2, 120, false)]
+        public void IcyHot(int a, int b, bool expected)
+        {
+            bool result = Testwarmup.IcyHot(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //17. Between10and20
+        [TestCase(12, 99, true)]
+        [TestCase(21, 12, true)]
+        [TestCase(8, 99, false)]
+        public void Between10and20(int a, int b, bool expected)
+        {
+            bool result = Testwarmup.Between10and20(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //18. HasTeen
+        [TestCase(13, 20, 10, true)]
+        [TestCase(20, 19, 10, true)]
+        [TestCase(20, 10, 12, false)]
+        public void HasTeen(int a, int b, int c, bool expected)
+        {
+            bool result = Testwarmup.HasTeen(a, b, c);
+            Assert.AreEqual(result, expected);
+        }
+
+        //19. SoAlone
+
+
     }
 }
 
