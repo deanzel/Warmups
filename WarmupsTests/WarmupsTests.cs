@@ -293,6 +293,38 @@ namespace WarmupsTests
         }
 
         //7. NearHundred
+        [TestCase(103, true)]
+        [TestCase(198, true)]
+        [TestCase(89, false)]
+        public void NearHundred(int a, bool expected)
+        {
+            bool result = Testwarmup.NearHundred(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //8. PosNeg
+        [TestCase(1, -1, false, true)]
+        [TestCase(-1, 1, false, true)]
+        [TestCase(-4, -5, true, true)]
+        [TestCase(5, 10, false, false)]
+        [TestCase(-1, 1, true, false)]
+        public void PosNeg(int a, int b, bool c, bool expected)
+        {
+            bool result = Testwarmup.PosNeg(a, b, c);
+            Assert.AreEqual(result, expected);
+        }
+
+        //9. NotString
+        [TestCase("candy", "not candy")]
+        [TestCase("not bad", "not bad")]
+        [TestCase("danknot", "not danknot")]
+        public void NotString(string a, string expected)
+        {
+            string result = Testwarmup.NotString(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //10. MissingChar
     }
 }
 

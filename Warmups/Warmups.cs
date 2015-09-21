@@ -47,6 +47,9 @@ namespace Warmups
             Console.WriteLine(prog.Diff21(23));
             Console.WriteLine(prog.ParrotTrouble(true, 6));
             Console.WriteLine(prog.Makes10(1, 9));
+            Console.WriteLine(prog.NearHundred(198));
+            Console.WriteLine(prog.PosNeg(-4, -5, true));
+            Console.WriteLine(prog.NotString("candy"));
 
             Console.ReadLine();
         }
@@ -388,6 +391,53 @@ namespace Warmups
 
         //7. NearHundred
         public bool NearHundred(int n)
+        {
+            int dif100 = Math.Abs(100 - n);
+            int dif200 = Math.Abs(200 - n);
+            if (dif100 <= 10 || dif200 <= 10)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //8. PosNeg
+        public bool PosNeg(int a, int b, bool negative)
+        {
+            if (negative == true)
+            {
+                if (a < 0 && b < 0)
+                {
+                    return true;
+                }
+                return false;
+            }
+            else if (a < 0 && b > 0)
+            {
+                return true;
+            }
+            else if (a > 0 && b < 0)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        //9. NotString
+        public string NotString(string s)
+        {
+            if (s.StartsWith("not") == true)
+            {
+                return String.Format(s);
+            }
+            else
+            {
+                return String.Format("not {0}", s);
+            }
+        }
+
+        //10. MissingChar
+        public string MissingChar(string str, int n)
         {
 
         }
