@@ -476,6 +476,36 @@ namespace WarmupsTests
             Assert.AreEqual(result, expected);
 
         }
+
+        //25. EEEEEEE
+        [TestCase("Hello", true)]
+        [TestCase("Heelle", true)]
+        [TestCase("Heelele", false)]
+        public void GotE(string a, bool expected)
+        {
+            bool result = Testwarmup.GotE(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //26. EndUp
+        [TestCase("Hello", "HeLLO")]
+        [TestCase("hi there", "hi thERE")]
+        [TestCase("hi", "HI")]
+        public void EndUp(string a, string expected)
+        {
+            string result = Testwarmup.EndUp(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //27. EveryNth
+        [TestCase("Miracle", 2, "Mrce")]
+        [TestCase("abcdefg", 2, "aceg")]
+        [TestCase("abcdefg", 3, "adg")]
+        public void EveryNth(string a, int b, string expected)
+        {
+            string result = Testwarmup.EveryNth(a, b);
+            Assert.AreEqual(result, expected);
+        }
     }
 }
 

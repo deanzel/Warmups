@@ -65,6 +65,10 @@ namespace Warmups
             Console.WriteLine(prog.StartOz("ozymandias"));
             Console.WriteLine(prog.Max(1, 3, 2));
             Console.WriteLine(prog.Closer(13, 7));
+            Console.WriteLine(prog.GotE("Heelle"));
+            Console.WriteLine(prog.EndUp("hi there"));
+            Console.WriteLine(prog.EveryNth("Miracle", 2));
+
 
             Console.ReadLine();
         }
@@ -628,6 +632,53 @@ namespace Warmups
                 return a;
             }
             return 0;
+        }
+
+        //25. EEEEEEE
+        public bool GotE(string str)
+        {
+            char[] array = str.ToCharArray();
+            int numE = 0;
+
+            foreach (char c in array)
+            {
+                if (c == 'e')
+                {
+                    numE++;
+                }
+            }
+
+            if (numE <= 3 && numE >= 1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //26. EndUp
+        public string EndUp(string str)
+        {
+            if (str.Length > 3)
+            {
+                return String.Format("{0}{1}", str.Substring(0, str.Length - 3), str.Substring(str.Length - 3).ToUpper());
+            }
+            else
+            {
+                return str.ToUpper();
+            }
+        }
+
+        //27. EveryNth
+        public string EveryNth(string str, int n)
+        {
+            string finalString = str.Substring(0, 1);
+
+            for (int i = n; i < str.Length; i+=n)
+            {
+                finalString += str.Substring(i, 1);
+            }
+
+            return finalString;
         }
     }
 }
