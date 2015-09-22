@@ -84,11 +84,11 @@ namespace Warmups
             Console.WriteLine(prog.Array123(new int[] {1, 1, 2, 3, 1}));
             Console.WriteLine(prog.SubStringMatch("xxcaazz", "xxbaaz"));
             Console.WriteLine(prog.StringX("xxHxix"));
-            ;
             Console.WriteLine(prog.AltPairs("Chocolate"));
             Console.WriteLine(prog.DoNotYak("yak123ya"));
-            Console.WriteLine(prog.DoNotYak("pakyak"));
-            Console.WriteLine(prog.DoNotYak("yakpak"));
+            Console.WriteLine(prog.Array667(new int[] {6, 7, 2, 6}));
+            Console.WriteLine(prog.NoTriples(new int[] {1, 1, 2, 2, 2, 1}));
+            Console.WriteLine(prog.Pattern51(new int[] {1, 2, 7, 1, 1}));
 
             Console.ReadLine();
         }
@@ -360,7 +360,7 @@ namespace Warmups
         }
 
 
-        //Conditionals Warmups
+        //Conditionals Warmups:
 
         //1. MischieviousChildren
         public bool AreWeInTrouble(bool aSmile, bool bSmile)
@@ -706,7 +706,7 @@ namespace Warmups
 
 
 
-        //Loops Warmups
+        //Loops Warmups:
 
         //1. StringTimes
         public string StringTimes(string str, int n)
@@ -930,7 +930,55 @@ namespace Warmups
         //15. Array667
         public int Array667(int[] numbers)
         {
+            int count = 0;
 
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                if (numbers[i] == 6 && (numbers[i + 1] == 6 || numbers[i + 1] == 7))
+                {
+                    count++;
+                }
+            }
+            return count;
         }
+
+        //16. NoTriples
+        public bool NoTriples(int[] numbers)
+        {
+            bool hasNoTriples = true;
+
+            for (int i = 0; i < numbers.Length - 2; i++)
+            {
+                if (numbers[i] == numbers[i + 1] && numbers[i] == numbers[i + 2])
+                {
+                    hasNoTriples = false;
+                    break;
+                }
+            }
+            return hasNoTriples;
+        }
+
+        //17. Pattern51
+        public bool Pattern51(int[] numbers)
+        {
+            bool hasPattern = false;
+
+            for (int i = 0; i < numbers.Length - 2; i++)
+            {
+                if (numbers[i] == (numbers[i + 1] - 5) && numbers[i] == (numbers[i + 2] + 1))
+                {
+                    hasPattern = true;
+                    break;
+                }
+            }
+            return hasPattern;
+        }
+
+
+        //Logic Warmups:
+
+        //1. GreatParty
+
+
     }
 }

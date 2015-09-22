@@ -653,8 +653,39 @@ namespace WarmupsTests
         }
 
         //15. Array667
+        [TestCase(new int[] {6, 6, 2}, 1)]
+        [TestCase(new int[] {6, 6, 2, 6, 6}, 2)]
+        [TestCase(new int[] {6, 7, 2, 6}, 1)]
+        public void Array667(int[] a, int expected)
+        {
+            int result = Testwarmup.Array667(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //16. NoTriples
+        [TestCase(new int[] {1, 1, 2, 2, 2, 1}, false)]
+        [TestCase(new int[] {1, 1, 2, 2, 1}, true)]
+        [TestCase(new int[] {1, 1, 1, 2, 2, 2, 1}, false)]
+        public void NoTriples(int[] a, bool expected)
+        {
+            bool result = Testwarmup.NoTriples(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //17. Pattern51
+        [TestCase(new int[] {1, 2, 7, 1, 1}, true)]
+        [TestCase(new int[] {1, 2, 8, 1}, false)]
+        [TestCase(new int[] {2, 7, 1}, true)]
+        public void Pattern51(int[] a, bool expected)
+        {
+            bool result = Testwarmup.Pattern51(a);
+            Assert.AreEqual(result, expected);
+        }
 
 
+        //Logic Tests:
+
+        //1. GreatParty
 
     }
 }
