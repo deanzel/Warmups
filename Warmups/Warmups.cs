@@ -99,7 +99,15 @@ namespace Warmups
             Console.WriteLine(prog.AlarmClock(1, false));
             Console.WriteLine(prog.LoveSix(1, 5));
             Console.WriteLine(prog.InRange(11, true));
-
+            Console.WriteLine(prog.SpecialEleven(23));
+            Console.WriteLine(prog.Mod20(20));
+            Console.WriteLine(prog.Mod35(10));
+            Console.WriteLine(prog.AnswerCell(true, false, false));
+            Console.WriteLine(prog.TwoIsOne(3, 1, 2));
+            Console.WriteLine(prog.AreInOrder(1, 2, 4, false));
+            Console.WriteLine(prog.InOrderEqual(2, 5, 11, false));
+            Console.WriteLine(prog.LastDigit(23, 19, 13));
+            Console.WriteLine(prog.RollDice(3, 3, false));
 
             Console.ReadLine();
         }
@@ -854,7 +862,7 @@ namespace Warmups
         {
             for (int i = 0; i < numbers.Length - 2; i++)
             {
-                if (numbers[i] == 1 && numbers[i + 1] == 2 && numbers[i + 2] == 3)
+                if (numbers[i + 2] == 3 && numbers[i + 1] == 2 && numbers[i] == 1)
                 {
                     return true;
                 }
@@ -1127,9 +1135,120 @@ namespace Warmups
         //9. SpecialEleven
         public bool SpecialEleven(int n)
         {
+            if (n%11 == 0 || n%11 == 1)
+            {
+                return true;
+            }
+            return false;
+        }
 
+        //10. Mod20
+        public bool Mod20(int n)
+        {
+            if (n%20 == 1 || n%20 == 2)
+            {
+                return true;
+            }
+            return false;
+        }
 
+        //11. Mod35
+        public bool Mod35(int n)
+        {
+            if ((n%3 == 0 && n%5 != 0) || (n%5 == 0 && n%3 != 0))
+            {
+                return true;
+            }
+            return false;
+        }
 
+        //12. AnswerCell
+        public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
+        {
+            if (isAsleep)
+            {
+                return false;
+            }
+            if (isMom)
+            {
+                return true;
+            }
+            if (!isMorning)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //13. TwoIsOne
+        public bool TwoIsOne(int a, int b, int c)
+        {
+            if ((a == b + c) || (b == a + b) || (c == a + b))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //14. AreInOrder
+        public bool AreInOrder(int a, int b, int c, bool bOk)
+        {
+            if (bOk)
+            {
+                if (c > b)
+                {
+                    return true;
+                }
+            }
+            if (b > a && c > b)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //15. InOrderEqual
+        public bool InOrderEqual(int a, int b, int c, bool equalOk)
+        {
+            if (equalOk)
+            {
+                if (a <= b && b <= c)
+                {
+                    return true;
+                }
+            }
+            if (a < b && b < c)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //16. LastDigit
+        public bool LastDigit(int a, int b, int c)
+        {
+            if (a%10 == b%10 || a%10 == c%10 || b%10 == c%10)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //17. RollDice
+        public int RollDice(int die1, int die2, bool noDoubles)
+        {
+            if (noDoubles)
+            {
+                if (die1 == 6 && die2 == 6)
+                {
+                    return 7;
+                }
+                if (die1 == die2)
+                {
+                    return die1 + die2 + 1;
+                }
+            }
+            return die1 + die2;
         }
     }
 }

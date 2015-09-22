@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework.Constraints;
 
 namespace WarmupsTests
 {
@@ -606,6 +607,7 @@ namespace WarmupsTests
         [TestCase(new int[] {1, 1, 2, 3, 1}, true)]
         [TestCase(new int[] {1, 1, 2, 4, 1}, false)]
         [TestCase(new int[] {1, 1, 2, 1, 2, 3}, true)]
+        [TestCase(new int[] { 1, 1, 2, 1, 2, 2 }, false)]
         public void Array123(int[] a, bool expected)
         {
             bool result = Testwarmup.Array123(a);
@@ -769,6 +771,95 @@ namespace WarmupsTests
         }
 
         //9. SpecialEleven
+        [TestCase(22, true)]
+        [TestCase(23, true)]
+        [TestCase(24, false)]
+        public void SpecialEleven(int a, bool expected)
+        {
+            bool result = Testwarmup.SpecialEleven(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //10. Mod20
+        [TestCase(20, false)]
+        [TestCase(21, true)]
+        [TestCase(22, true)]
+        public void Mod20(int a, bool expected)
+        {
+            bool result = Testwarmup.Mod20(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //11. Mod35
+        [TestCase(3, true)]
+        [TestCase(10, true)]
+        [TestCase(15, false)]
+        public void Mod35(int a, bool expected)
+        {
+            bool result = Testwarmup.Mod35(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //12. AnswerCell
+        [TestCase(false, false, false, true)]
+        [TestCase(false, false, true, false)]
+        [TestCase(true, false, false, false)]
+        public void AnswerCell(bool a, bool b, bool c, bool expected)
+        {
+            bool result = Testwarmup.AnswerCell(a, b, c);
+            Assert.AreEqual(result, expected);
+        }
+
+        //13. TwoIsOne
+        [TestCase(1, 2, 3, true)]
+        [TestCase(3, 1, 2, true)]
+        [TestCase(3, 2, 2, false)]
+        public void TwoIsOne(int a, int b, int c, bool expected)
+        {
+            bool result = Testwarmup.TwoIsOne(a, b, c);
+            Assert.AreEqual(result, expected);
+        }
+
+        //14. AreInOrder
+        [TestCase(1, 2, 4, false, true)]
+        [TestCase(1, 2, 1, false, false)]
+        [TestCase(1, 1, 2, true, true)]
+        public void AreInOrder(int a, int b, int c, bool d, bool expected)
+        {
+            bool result = Testwarmup.AreInOrder(a, b, c, d);
+            Assert.AreEqual(result, expected);
+        }
+
+        //15. InOrderEqual
+        [TestCase(2, 5, 11, false, true)]
+        [TestCase(5, 7, 6, false, false)]
+        [TestCase(5, 5, 7, true, true)]
+        public void InOrderEqual(int a, int b, int c, bool d, bool expected)
+        {
+            bool result = Testwarmup.InOrderEqual(a, b, c, d);
+            Assert.AreEqual(result, expected);
+        }
+
+        //16. LastDigit
+        [TestCase(23, 19, 13, true)]
+        [TestCase(23, 19, 12, false)]
+        [TestCase(23, 19, 3, true)]
+        public void LastDigit(int a, int b, int c, bool expected)
+        {
+            bool result = Testwarmup.LastDigit(a, b, c);
+            Assert.AreEqual(result, expected);
+        }
+
+        //17. RollDice
+        [TestCase(2, 3, true, 5)]
+        [TestCase(3, 3, true, 7)]
+        [TestCase(3, 3, false, 6)]
+        [TestCase(6, 6, true, 7)]
+        public void RollDice(int a, int b, bool c, int expected)
+        {
+            int result = Testwarmup.RollDice(a, b, c);
+            Assert.AreEqual(result, expected);
+        }
     }
 }
 
