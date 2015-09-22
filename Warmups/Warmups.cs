@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,8 @@ namespace Warmups
             Console.WriteLine(prog.EveryOther("Heeololeo"));
             Console.WriteLine(prog.StringSplosion("Code"));
             Console.WriteLine(prog.CountLast2("axxxaaxx"));
+            Console.WriteLine(prog.Count9(new int[] {1, 9, 9, 3, 9}));
+
 
             Console.ReadLine();
         }
@@ -799,6 +802,21 @@ namespace Warmups
 
         //8. Count9
         public int Count9(int[] numbers)
+        {
+            int count = 0;
+
+            foreach (int i in numbers)
+            {
+                if (i == 9)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        //9. ArrayFront9
+        public bool ArrayFront9(int[] numbers)
         {
 
         }

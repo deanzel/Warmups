@@ -583,6 +583,17 @@ namespace WarmupsTests
         }
 
         //8. Count9
+        [TestCase(new int[] { 1, 9, 9}, 2)]
+        [TestCase(new int[] { 1, 9, 9, 3, 9}, 3)]
+        [TestCase(new int[] { 1, 2, 9}, 1)]
+        public void Count9(int[] a, int expected)
+        {
+            int result = Testwarmup.Count9(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //9. ArrayFront9
+
     }
 }
 
