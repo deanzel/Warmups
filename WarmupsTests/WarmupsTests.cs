@@ -230,6 +230,8 @@ namespace WarmupsTests
             Assert.AreEqual(result, expected);
         }
 
+
+
         //Conditionals Tests:
 
         //1. MischieviousChildren
@@ -506,6 +508,32 @@ namespace WarmupsTests
             string result = Testwarmup.EveryNth(a, b);
             Assert.AreEqual(result, expected);
         }
+
+
+        //Loops Tests:
+
+        //1. StringTimes
+        [TestCase("Yolo", 3, "YoloYoloYolo")]
+        [TestCase("Hi", 2, "HiHi")]
+        [TestCase("Hi", 1, "Hi")]
+        public void StringTimes(string a, int b, string expected)
+        {
+            string result = Testwarmup.StringTimes(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //2. FrontTimes
+        [TestCase("Chocolate", 3, "ChoChoCho")]
+        [TestCase("Ab", 3, "AbAbAb")]
+        [TestCase("Dean", 2, "DeaDea")]
+        public void FrontTimes(string a, int b, string expected)
+        {
+            string result = Testwarmup.FrontTimes(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //3. CountXX
+
     }
 }
 

@@ -14,64 +14,69 @@ namespace Warmups
             Warmup prog = new Warmup();
             Console.WriteLine("Dean's Strings Warmups:\n");
             //Strings Warmups
-            Console.WriteLine(prog.SayHi("Dean"));
-            Console.WriteLine(prog.Abba("YOLO", "BRO"));
-            Console.WriteLine(prog.MakeTags("tagz", "Contento"));
-            Console.WriteLine(prog.InsertWord("[[]]", "DANK"));
-            Console.WriteLine(prog.MultipleEndings("Super"));
-            Console.WriteLine(prog.FirstHalf("WhereAreYou?"));
-            Console.WriteLine(prog.TrimOne("Danking"));
-            Console.WriteLine(prog.LongInMiddle("Baller", "time"));
-            Console.WriteLine(prog.RotateLeft2("kawaii"));
-            Console.WriteLine(prog.RotateRight2("Swagerific"));
-            Console.WriteLine(prog.TakeOne("Cleveland", false));
-            Console.WriteLine(prog.MiddleTwo("DeanChoi"));
-            Console.WriteLine(prog.EndsWithLy("Holy Moly"));
-            Console.WriteLine(prog.FrontAndBack("LeBronJames", 3));
-            Console.WriteLine(prog.TakeTwoFromPosition("Danking", 2));
-            Console.WriteLine(prog.HasBad("xbadassery"));
-            Console.WriteLine(prog.AtFirst("hello"));
-            Console.WriteLine(prog.LastChars("YOLO", "totally"));
-            Console.WriteLine(prog.ConCat("abcd", "defg"));
-            Console.WriteLine(prog.SwapLast("coding"));
-            Console.WriteLine(prog.FrontAgain("edited"));
-            Console.WriteLine(prog.MinCat("Hello", "java"));
-            Console.WriteLine(prog.TweakFront("abedcf"));
-            Console.WriteLine(prog.StripX("xHxix"));
+            //Console.WriteLine(prog.SayHi("Dean"));
+            //Console.WriteLine(prog.Abba("YOLO", "BRO"));
+            //Console.WriteLine(prog.MakeTags("tagz", "Contento"));
+            //Console.WriteLine(prog.InsertWord("[[]]", "DANK"));
+            //Console.WriteLine(prog.MultipleEndings("Super"));
+            //Console.WriteLine(prog.FirstHalf("WhereAreYou?"));
+            //Console.WriteLine(prog.TrimOne("Danking"));
+            //Console.WriteLine(prog.LongInMiddle("Baller", "time"));
+            //Console.WriteLine(prog.RotateLeft2("kawaii"));
+            //Console.WriteLine(prog.RotateRight2("Swagerific"));
+            //Console.WriteLine(prog.TakeOne("Cleveland", false));
+            //Console.WriteLine(prog.MiddleTwo("DeanChoi"));
+            //Console.WriteLine(prog.EndsWithLy("Holy Moly"));
+            //Console.WriteLine(prog.FrontAndBack("LeBronJames", 3));
+            //Console.WriteLine(prog.TakeTwoFromPosition("Danking", 2));
+            //Console.WriteLine(prog.HasBad("xbadassery"));
+            //Console.WriteLine(prog.AtFirst("hello"));
+            //Console.WriteLine(prog.LastChars("YOLO", "totally"));
+            //Console.WriteLine(prog.ConCat("abcd", "defg"));
+            //Console.WriteLine(prog.SwapLast("coding"));
+            //Console.WriteLine(prog.FrontAgain("edited"));
+            //Console.WriteLine(prog.MinCat("Hello", "java"));
+            //Console.WriteLine(prog.TweakFront("abedcf"));
+            //Console.WriteLine(prog.StripX("xHxix"));
 
             //Conditionals Warmups
-            Console.WriteLine("\nDean's Conditionals Warmups:\n");
-            Console.WriteLine(prog.AreWeInTrouble(true, true));
-            Console.WriteLine(prog.CanSleepIn(true, false));
-            Console.WriteLine(prog.SumDouble(2, 2));
-            Console.WriteLine(prog.Diff21(23));
-            Console.WriteLine(prog.ParrotTrouble(true, 6));
-            Console.WriteLine(prog.Makes10(1, 9));
-            Console.WriteLine(prog.NearHundred(198));
-            Console.WriteLine(prog.PosNeg(-4, -5, true));
-            Console.WriteLine(prog.NotString("candy"));
-            Console.WriteLine(prog.MissingChar("kitten", 1));
-            Console.WriteLine(prog.FrontBack("deanzel"));
-            Console.WriteLine(prog.Front3("Microsoft"));
-            Console.WriteLine(prog.BackAround("Hello"));
-            Console.WriteLine(prog.Multiple3or5(10));
-            Console.WriteLine(prog.StartHi("high up"));
-            Console.WriteLine(prog.IcyHot(120, -1));
-            Console.WriteLine(prog.Between10and20(12, 99));
-            Console.WriteLine(prog.HasTeen(20, 19, 10));
-            Console.WriteLine(prog.SoAlone(13, 13));
-            Console.WriteLine(prog.RemoveDel("adeldank"));
-            Console.WriteLine(prog.IxStart("mix booze"));
-            Console.WriteLine(prog.StartOz("ozymandias"));
-            Console.WriteLine(prog.Max(1, 3, 2));
-            Console.WriteLine(prog.Closer(13, 7));
-            Console.WriteLine(prog.GotE("Heelle"));
-            Console.WriteLine(prog.EndUp("hi there"));
-            Console.WriteLine(prog.EveryNth("Miracle", 2));
+            //Console.WriteLine("\nDean's Conditionals Warmups:\n");
+            //Console.WriteLine(prog.AreWeInTrouble(true, true));
+            //Console.WriteLine(prog.CanSleepIn(true, false));
+            //Console.WriteLine(prog.SumDouble(2, 2));
+            //Console.WriteLine(prog.Diff21(23));
+            //Console.WriteLine(prog.ParrotTrouble(true, 6));
+            //Console.WriteLine(prog.Makes10(1, 9));
+            //Console.WriteLine(prog.NearHundred(198));
+            //Console.WriteLine(prog.PosNeg(-4, -5, true));
+            //Console.WriteLine(prog.NotString("candy"));
+            //Console.WriteLine(prog.MissingChar("kitten", 1));
+            //Console.WriteLine(prog.FrontBack("deanzel"));
+            //Console.WriteLine(prog.Front3("Microsoft"));
+            //Console.WriteLine(prog.BackAround("Hello"));
+            //Console.WriteLine(prog.Multiple3or5(10));
+            //Console.WriteLine(prog.StartHi("high up"));
+            //Console.WriteLine(prog.IcyHot(120, -1));
+            //Console.WriteLine(prog.Between10and20(12, 99));
+            //Console.WriteLine(prog.HasTeen(20, 19, 10));
+            //Console.WriteLine(prog.SoAlone(13, 13));
+            //Console.WriteLine(prog.RemoveDel("adeldank"));
+            //Console.WriteLine(prog.IxStart("mix booze"));
+            //Console.WriteLine(prog.StartOz("ozymandias"));
+            //Console.WriteLine(prog.Max(1, 3, 2));
+            //Console.WriteLine(prog.Closer(13, 7));
+            //Console.WriteLine(prog.GotE("Heelle"));
+            //Console.WriteLine(prog.EndUp("hi there"));
+            //Console.WriteLine(prog.EveryNth("Miracle", 2));
 
+            //Loops Warmups
+            Console.WriteLine(prog.StringTimes("Yolo", 3));
+            Console.WriteLine(prog.FrontTimes("Chocolate", 3));
 
             Console.ReadLine();
         }
+
+        //Strings Warmups:
 
         //1. SayHi
         public string SayHi(string name)
@@ -336,6 +341,7 @@ namespace Warmups
                 return String.Format(str);
             }
         }
+
 
         //Conditionals Warmups
 
@@ -673,12 +679,55 @@ namespace Warmups
         {
             string finalString = str.Substring(0, 1);
 
-            for (int i = n; i < str.Length; i+=n)
+            for (int i = n; i < str.Length; i += n)
             {
                 finalString += str.Substring(i, 1);
             }
 
             return finalString;
         }
+
+
+
+        //Loops Warmups
+
+        //1. StringTimes
+        public string StringTimes(string str, int n)
+        {
+            string finalString = "";
+
+            for (int i = 1; i <= n; i++)
+            {
+                finalString += str;
+            }
+            return finalString;
+        }
+
+        //2. FrontTimes
+        public string FrontTimes(string str, int n)
+        {
+            string finalString = "";
+
+            if (str.Length > 3)
+            {
+                for (int i = 1; i <= n; i++)
+                {
+                    finalString += str.Substring(0, 3);
+                }
+            }
+            else
+            {
+                for (int i = 1; i <= n; i++)
+                {
+                    finalString += str;
+                }
+            }
+
+            return finalString;
+        }
+
+        //3. CountXX
+
+
     }
 }
