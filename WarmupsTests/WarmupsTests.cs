@@ -727,6 +727,48 @@ namespace WarmupsTests
         }
 
         //5. SkipSum
+        [TestCase(3, 4, 7)]
+        [TestCase(9, 4, 20)]
+        [TestCase(10, 11, 21)]
+        public void SkipSum(int a, int b, int expected)
+        {
+            int result = Testwarmup.SkipSum(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //6. AlarmClock
+        [TestCase(1, false, "7:00")]
+        [TestCase(5, false, "7:00")]
+        [TestCase(0, false, "10:00")]
+        [TestCase(0, true, "off")]
+        public void AlarmClock(int a, bool b, string expected)
+        {
+            string result = Testwarmup.AlarmClock(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //7. LoveSix
+        [TestCase(6, 4, true)]
+        [TestCase(4, 5, false)]
+        [TestCase(1, 5, true)]
+        [TestCase(1, 7, true)]
+        public void LoveSix(int a, int b, bool expected)
+        {
+            bool result = Testwarmup.LoveSix(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //8. InRange
+        [TestCase(5, false, true)]
+        [TestCase(11, false, false)]
+        [TestCase(11, true, true)]
+        public void InRange(int a, bool b, bool expected)
+        {
+            bool result = Testwarmup.InRange(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //9. SpecialEleven
     }
 }
 

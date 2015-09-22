@@ -95,6 +95,10 @@ namespace Warmups
             Console.WriteLine(prog.CanHazTable(5, 10));
             Console.WriteLine(prog.PlayOutside(95, true));
             Console.WriteLine(prog.CaughtSpeeding(65, false));
+            Console.WriteLine(prog.SkipSum(9, 4));
+            Console.WriteLine(prog.AlarmClock(1, false));
+            Console.WriteLine(prog.LoveSix(1, 5));
+            Console.WriteLine(prog.InRange(11, true));
 
 
             Console.ReadLine();
@@ -1063,6 +1067,68 @@ namespace Warmups
         //5. SkipSum
         public int SkipSum(int a, int b)
         {
+            if (a + b >= 10 && a + b <= 19)
+            {
+                return 20;
+            }
+            return a + b;
+        }
+
+        //6. AlarmClock
+        public string AlarmClock(int day, bool vacation)
+        {
+            if (vacation == true)
+            {
+                if (day == 0 || day == 6)
+                {
+                    return "off";
+                }
+                return "10:00";
+            }
+            if (day == 0 || day == 6)
+            {
+                return "10:00";
+            }
+            return "7:00";
+        }
+
+        //7. LoveSix
+        public bool LoveSix(int a, int b)
+        {
+            if (a == 6 || b == 6)
+            {
+                return true;
+            }
+            if (a + b == 6 || Math.Abs(a - b) == 6)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //8. InRange
+        public bool InRange(int n, bool outsideMode)
+        {
+            if (outsideMode == true)
+            {
+                if (n <= 1 || n >= 10)
+                {
+                    return true;
+                }
+                return false;
+            }
+            if (n >= 1 && n <= 10)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //9. SpecialEleven
+        public bool SpecialEleven(int n)
+        {
+
+
 
         }
     }
