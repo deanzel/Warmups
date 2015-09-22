@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -79,7 +80,15 @@ namespace Warmups
             Console.WriteLine(prog.StringSplosion("Code"));
             Console.WriteLine(prog.CountLast2("axxxaaxx"));
             Console.WriteLine(prog.Count9(new int[] {1, 9, 9, 3, 9}));
-
+            Console.WriteLine(prog.ArrayFront9(new int[] {1, 2, 9, 3, 4}));
+            Console.WriteLine(prog.Array123(new int[] {1, 1, 2, 3, 1}));
+            Console.WriteLine(prog.SubStringMatch("xxcaazz", "xxbaaz"));
+            Console.WriteLine(prog.StringX("xxHxix"));
+            ;
+            Console.WriteLine(prog.AltPairs("Chocolate"));
+            Console.WriteLine(prog.DoNotYak("yak123ya"));
+            Console.WriteLine(prog.DoNotYak("pakyak"));
+            Console.WriteLine(prog.DoNotYak("yakpak"));
 
             Console.ReadLine();
         }
@@ -817,6 +826,109 @@ namespace Warmups
 
         //9. ArrayFront9
         public bool ArrayFront9(int[] numbers)
+        {
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (numbers[i] == 9)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //10. Array123
+        public bool Array123(int[] numbers)
+        {
+            for (int i = 0; i < numbers.Length - 2; i++)
+            {
+                if (numbers[i] == 1 && numbers[i + 1] == 2 && numbers[i + 2] == 3)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //11. SubStringMatch
+        public int SubStringMatch(string a, string b)
+        {
+            int count = 0;
+            int i = 0;
+
+            while (i < a.Length - 1 && i < b.Length - 1)
+            {
+                if (a.Substring(i, 2) == b.Substring(i, 2))
+                {
+                    count++;
+                }
+                i++;
+            }
+            return count;
+        }
+
+        //12. StringX
+        public string StringX(string str)
+        {
+            string finalString = "";
+
+            for (int i = 1; i < str.Length - 1; i++)
+            {
+                if (str.Substring(i, 1) != "x")
+                {
+                    finalString += str.Substring(i, 1);
+                }
+                //else { finalString += str.Substring(i, 1);}
+            }
+
+            return String.Format("{0}{1}{2}", str.Substring(0, 1), finalString, str.Substring(str.Length - 1, 1));
+        }
+
+        //13. AltPairs
+        public string AltPairs(string str)
+        {
+            string finalString = "";
+
+            for (int i = 0; i < str.Length - 1; i += 4)
+            {
+                finalString += str.Substring(i, 2);
+            }
+            if (str.Length%4 == 1)
+            {
+                finalString += str.Substring(str.Length - 1);
+            }
+            return finalString;
+        }
+
+        //14. DoNotYak
+        public string DoNotYak(string str)
+        {
+            string finalString = "";
+
+            for (int i = 0; i < str.Length - 3; i++)
+            {
+                if (str[i] == 'y' && str[i + 2] == 'k')
+                {
+                    finalString += "";
+                    i += 2;
+                }
+                else finalString += str.Substring(i, 1);
+            }
+            if (str[str.Length - 3] == 'y' && str[str.Length - 1] == 'k')
+            {
+                return finalString;
+            }
+            else
+            {
+                finalString += str.Substring(str.Length - 3);
+            }
+            return finalString;
+
+        }
+
+        //15. Array667
+        public int Array667(int[] numbers)
         {
 
         }

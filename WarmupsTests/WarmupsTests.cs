@@ -593,6 +593,68 @@ namespace WarmupsTests
         }
 
         //9. ArrayFront9
+        [TestCase(new int[] {1, 2, 9, 3, 4}, true)]
+        [TestCase(new int[] {1, 2, 3, 4, 9}, false)]
+        [TestCase(new int[] {1, 2, 3, 4, 5}, false)]
+        public void ArrayFront9(int[] a, bool expected)
+        {
+            bool result = Testwarmup.ArrayFront9(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //10. Array123
+        [TestCase(new int[] {1, 1, 2, 3, 1}, true)]
+        [TestCase(new int[] {1, 1, 2, 4, 1}, false)]
+        [TestCase(new int[] {1, 1, 2, 1, 2, 3}, true)]
+        public void Array123(int[] a, bool expected)
+        {
+            bool result = Testwarmup.Array123(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //11. SubStringMatch
+        [TestCase("xxcaazz", "xxbaaz", 3)]
+        [TestCase("abc", "abc", 2)]
+        [TestCase("abc", "axc", 0)]
+        public void SubStringMatch(string a, string b, int expected)
+        {
+            int result = Testwarmup.SubStringMatch(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //12. StringX
+        [TestCase("xxHxix", "xHix")]
+        [TestCase("abxxxcd", "abcd")]
+        [TestCase("xabxxxcdx", "xabcdx")]
+        public void StringX(string a, string expected)
+        {
+            string result = Testwarmup.StringX(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //13. AltPairs
+        [TestCase("kitten", "kien")]
+        [TestCase("Chocolate", "Chole")]
+        [TestCase("CodingHorror", "Congrr")]
+        public void AltPairs(string a, string expected)
+        {
+            string result = Testwarmup.AltPairs(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //14. DoNotYak
+        [TestCase("yakpak", "pak")]
+        [TestCase("pakyak", "pak")]
+        [TestCase("yak123ya", "123ya")]
+        public void DoNotYak(string a, string expected)
+        {
+            string result = Testwarmup.DoNotYak(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //15. Array667
+
+
 
     }
 }
