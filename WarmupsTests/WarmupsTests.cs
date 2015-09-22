@@ -686,7 +686,47 @@ namespace WarmupsTests
         //Logic Tests:
 
         //1. GreatParty
+        [TestCase(30, false, false)]
+        [TestCase(50, false, true)]
+        [TestCase(70, true, true)]
+        public void GreatParty(int a, bool b, bool expected)
+        {
+            bool result = Testwarmup.GreatParty(a, b);
+            Assert.AreEqual(result, expected);
+        }
 
+        //2. CanHazTable
+        [TestCase(5, 10, 2)]
+        [TestCase(5, 2, 0)]
+        [TestCase(5, 5, 1)]
+        public void CanHazTable(int a, int b, int expected)
+        {
+            int result = Testwarmup.CanHazTable(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //3. PlayOutside
+        [TestCase(70, false, true)]
+        [TestCase(95, false, false)]
+        [TestCase(95, true, true)]
+        public void PlayOutside(int a, bool b, bool expected)
+        {
+            bool result = Testwarmup.PlayOutside(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //4. CaughtSpeeding
+        [TestCase(60, false, 0)]
+        [TestCase(65, false, 1)]
+        [TestCase(65, true, 0)]
+        [TestCase(90, true, 2)]
+        public void CaughtSpeeding(int a, bool b, int expected)
+        {
+            int result = Testwarmup.CaughtSpeeding(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //5. SkipSum
     }
 }
 

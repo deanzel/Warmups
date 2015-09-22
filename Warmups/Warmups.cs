@@ -72,23 +72,30 @@ namespace Warmups
             //Console.WriteLine(prog.EveryNth("Miracle", 2));
 
             //Loops Warmups
-            Console.WriteLine(prog.StringTimes("Yolo", 3));
-            Console.WriteLine(prog.FrontTimes("Chocolate", 3));
-            Console.WriteLine(prog.CountXX("xxxDx"));
-            Console.WriteLine(prog.DoubleX("axxbb"));
-            Console.WriteLine(prog.EveryOther("Heeololeo"));
-            Console.WriteLine(prog.StringSplosion("Code"));
-            Console.WriteLine(prog.CountLast2("axxxaaxx"));
-            Console.WriteLine(prog.Count9(new int[] {1, 9, 9, 3, 9}));
-            Console.WriteLine(prog.ArrayFront9(new int[] {1, 2, 9, 3, 4}));
-            Console.WriteLine(prog.Array123(new int[] {1, 1, 2, 3, 1}));
-            Console.WriteLine(prog.SubStringMatch("xxcaazz", "xxbaaz"));
-            Console.WriteLine(prog.StringX("xxHxix"));
-            Console.WriteLine(prog.AltPairs("Chocolate"));
-            Console.WriteLine(prog.DoNotYak("yak123ya"));
-            Console.WriteLine(prog.Array667(new int[] {6, 7, 2, 6}));
-            Console.WriteLine(prog.NoTriples(new int[] {1, 1, 2, 2, 2, 1}));
-            Console.WriteLine(prog.Pattern51(new int[] {1, 2, 7, 1, 1}));
+            //Console.WriteLine(prog.StringTimes("Yolo", 3));
+            //Console.WriteLine(prog.FrontTimes("Chocolate", 3));
+            //Console.WriteLine(prog.CountXX("xxxDx"));
+            //Console.WriteLine(prog.DoubleX("axxbb"));
+            //Console.WriteLine(prog.EveryOther("Heeololeo"));
+            //Console.WriteLine(prog.StringSplosion("Code"));
+            //Console.WriteLine(prog.CountLast2("axxxaaxx"));
+            //Console.WriteLine(prog.Count9(new int[] {1, 9, 9, 3, 9}));
+            //Console.WriteLine(prog.ArrayFront9(new int[] {1, 2, 9, 3, 4}));
+            //Console.WriteLine(prog.Array123(new int[] {1, 1, 2, 3, 1}));
+            //Console.WriteLine(prog.SubStringMatch("xxcaazz", "xxbaaz"));
+            //Console.WriteLine(prog.StringX("xxHxix"));
+            //Console.WriteLine(prog.AltPairs("Chocolate"));
+            //Console.WriteLine(prog.DoNotYak("yak123ya"));
+            //Console.WriteLine(prog.Array667(new int[] {6, 7, 2, 6}));
+            //Console.WriteLine(prog.NoTriples(new int[] {1, 1, 2, 2, 2, 1}));
+            //Console.WriteLine(prog.Pattern51(new int[] {1, 2, 7, 1, 1}));
+
+            //Logics Warmups
+            Console.WriteLine(prog.GreatParty(50, false));
+            Console.WriteLine(prog.CanHazTable(5, 10));
+            Console.WriteLine(prog.PlayOutside(95, true));
+            Console.WriteLine(prog.CaughtSpeeding(65, false));
+
 
             Console.ReadLine();
         }
@@ -978,7 +985,85 @@ namespace Warmups
         //Logic Warmups:
 
         //1. GreatParty
+        public bool GreatParty(int cigars, bool isWeekend)
+        {
+            if (isWeekend == false)
+            {
+                if (cigars >= 40 && cigars <= 60)
+                {
+                    return true;
+                }
+                return false;
+            }
+            if (cigars >= 40)
+            {
+                return true;
+            }
+            return false;
+        }
 
+        //2. CanHazTable
+        public int CanHazTable(int yourStyle, int dateStyle)
+        {
+            if (yourStyle <= 2 || dateStyle <= 2)
+            {
+                return 0;
+            }
+            else if (yourStyle >= 8 || dateStyle > 8)
+            {
+                return 2;
+            }
+            return 1;
+        }
 
+        //3. PlayOutside
+        public bool PlayOutside(int temp, bool isSummer)
+        {
+            if (isSummer == true)
+            {
+                if (temp >= 60 && temp <= 100)
+                {
+                    return true;
+                }
+                return false;
+            }
+            if (temp >= 60 && temp <= 90)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //4. CaughtSpeeding
+        public int CaughtSpeeding(int speed, bool isBirthday)
+        {
+            if (isBirthday == true)
+            {
+                if (speed <= 65)
+                {
+                    return 0;
+                }
+                if (speed <= 85 && speed > 65)
+                {
+                    return 1;
+                }
+                return 2;
+            }
+            if (speed <= 60)
+            {
+                return 0;
+            }
+            if (speed <= 80 && speed > 60)
+            {
+                return 1;
+            }
+            return 2;
+        }
+
+        //5. SkipSum
+        public int SkipSum(int a, int b)
+        {
+
+        }
     }
 }
