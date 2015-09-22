@@ -72,6 +72,11 @@ namespace Warmups
             //Loops Warmups
             Console.WriteLine(prog.StringTimes("Yolo", 3));
             Console.WriteLine(prog.FrontTimes("Chocolate", 3));
+            Console.WriteLine(prog.CountXX("xxxDx"));
+            Console.WriteLine(prog.DoubleX("axxbb"));
+            Console.WriteLine(prog.EveryOther("Heeololeo"));
+            Console.WriteLine(prog.StringSplosion("Code"));
+            Console.WriteLine(prog.CountLast2("axxxaaxx"));
 
             Console.ReadLine();
         }
@@ -727,7 +732,75 @@ namespace Warmups
         }
 
         //3. CountXX
+        public int CountXX(string str)
+        {
+            int x = 0;
+            int xCount = 0;
 
+            while (x < str.Length - 1)
+            {
+                if (str.Substring(x, 2) == "xx")
+                {
+                    xCount++;
+                }
+                x++;
+            }
+            return xCount;
+        }
 
+        //4. DoubleX
+        public bool DoubleX(string str)
+        {
+            if (str.Substring(str.IndexOf('x'), 2) == "xx")
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //5. EveryOther
+        public string EveryOther(string str)
+        {
+            string finalString = "";
+
+            for (int i = 0; i < str.Length; i += 2)
+            {
+                finalString += str.Substring(i, 1);
+            }
+            return finalString;
+        }
+
+        //6. StringSplosion
+        public string StringSplosion(string str)
+        {
+            string finalString = "";
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                finalString += str.Substring(0, i + 1);
+            }
+            return finalString;
+        }
+
+        //7. CountLast2
+        public int CountLast2(string str)
+        {
+            int count = 0;
+
+            for (int i = 0; i < str.Length - 2; i++)
+            {
+                if (str.Substring(i, 2) == str.Substring(str.Length - 2, 2))
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        //8. Count9
+        public int Count9(int[] numbers)
+        {
+
+        }
     }
 }

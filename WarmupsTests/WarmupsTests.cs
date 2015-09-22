@@ -533,7 +533,56 @@ namespace WarmupsTests
         }
 
         //3. CountXX
+        [TestCase("abcxx", 1)]
+        [TestCase("xxxx", 3)]
+        [TestCase("xxxDx", 2)]
+        public void CountXX(string a, int expected)
+        {
+            int result = Testwarmup.CountXX(a);
+            Assert.AreEqual(result, expected);
+        }
 
+        //4. DoubleX
+        [TestCase("axxbb", true)]
+        [TestCase("axaxxax", false)]
+        [TestCase("xxxxx", true)]
+        public void DoubleX(string a, bool expected)
+        {
+            bool result = Testwarmup.DoubleX(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //5. EveryOther
+        [TestCase("Hello", "Hlo")]
+        [TestCase("Hi", "H")]
+        [TestCase("Heeololeo", "Hello")]
+        public void EveryOther(string a, string expected)
+        {
+            string result = Testwarmup.EveryOther(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //6. StringSplosion
+        [TestCase("Code", "CCoCodCode")]
+        [TestCase("abc", "aababc")]
+        [TestCase("Danky", "DDaDanDankDanky")]
+        public void StringSplosion(string a, string expected)
+        {
+            string result = Testwarmup.StringSplosion(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //7. CountLast2
+        [TestCase("hixxhi", 1)]
+        [TestCase("xaxxaxaxx", 1)]
+        [TestCase("axxxaaxx", 2)]
+        public void CountLast2(string a, int expected)
+        {
+            int result = Testwarmup.CountLast2(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //8. Count9
     }
 }
 
