@@ -120,9 +120,8 @@ namespace Warmups
             //Console.WriteLine(prog.Sum(new int[] {1, 2, 3}));
             //Console.WriteLine(prog.RotateLeft(new int[] { 1, 2, 3 }));
             //Console.WriteLine(prog.Reverse(new int[] {1, 2, 3, 4}));
-
-
-
+            
+            //Rest didn't need or display a Console.WriteLine
             Console.ReadLine();
         }
 
@@ -1471,7 +1470,7 @@ namespace Warmups
             }
 
             if ((numbers[0] == 1 && numbers[1] == 3) || (numbers[1] == 1 && numbers[2] == 3) ||
-                (numbers[numbers.Length - 2] == 1 && numbers[numbers.Length - 1] == 3 ))
+                (numbers[numbers.Length - 2] == 1 && numbers[numbers.Length - 1] == 3))
             {
                 return true;
             }
@@ -1479,6 +1478,26 @@ namespace Warmups
         }
 
         //15. Make2
+        public int[] Make2(int[] a, int[] b)
+        {
+            int[] NewArray = new int[2];
 
+            if (a.Length >= 2)
+            {
+                NewArray[0] = a[0];
+                NewArray[1] = a[1];
+            }
+            if (a.Length == 1)
+            {
+                NewArray[0] = a[0];
+                NewArray[1] = b[0];
+            }
+            if (a.Length == 0)
+            {
+                NewArray[0] = b[0];
+                NewArray[1] = b[1];
+            }
+            return NewArray;
+        }
     }
 }

@@ -1007,7 +1007,14 @@ namespace WarmupsTests
         }
 
         //15. Make2
-
+        [TestCase(new int[] {4, 5}, new int[] {1, 2, 3}, new int[] {4, 5})]
+        [TestCase(new int[] { 4 }, new int[] { 1, 2, 3 }, new int[] { 4, 1 })]
+        [TestCase(new int[] { }, new int[] { 1, 2, 3 }, new int[] { 1, 2 })]
+        public void Make2(int[] a, int[] b, int[] expected)
+        {
+            int[] result = Testwarmup.Make2(a, b);
+            Assert.AreEqual(result, expected);
+        }
     }
 }
 
