@@ -914,7 +914,6 @@ namespace Warmups
                 {
                     finalString += str.Substring(i, 1);
                 }
-                //else { finalString += str.Substring(i, 1);}
             }
 
             return String.Format("{0}{1}{2}", str.Substring(0, 1), finalString, str.Substring(str.Length - 1, 1));
@@ -1422,8 +1421,64 @@ namespace Warmups
         //12. Double23
         public bool Double23(int[] numbers)
         {
+            int count2 = 0;
+            int count3 = 0;
 
-
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] == 2)
+                {
+                    count2++;
+                }
+                if (numbers[i] == 3)
+                {
+                    count3++;
+                }
+            }
+            if (count2 == 2 || count3 == 2)
+            {
+                return true;
+            }
+            return false;
         }
+
+        //13. Fix23
+        public int[] Fix23(int[] numbers)
+        {
+            int[] NewArray = new int[3];
+            NewArray = numbers;
+            if (numbers[0] == 2 && numbers[1] == 3)
+            {
+                NewArray[1] = 0;
+            }
+            if (numbers[1] == 2 && numbers[2] == 3)
+            {
+                NewArray[2] = 0;
+            }
+            return NewArray;
+        }
+
+        //14. Unlucky1
+        public bool Unlucky1(int[] numbers)
+        {
+            if (numbers.Length == 2)
+            {
+                if (numbers[0] == 1 && numbers[1] == 3)
+                {
+                    return true;
+                }
+                return false;
+            }
+
+            if ((numbers[0] == 1 && numbers[1] == 3) || (numbers[1] == 1 && numbers[2] == 3) ||
+                (numbers[numbers.Length - 2] == 1 && numbers[numbers.Length - 1] == 3 ))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //15. Make2
+
     }
 }

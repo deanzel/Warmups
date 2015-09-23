@@ -977,6 +977,36 @@ namespace WarmupsTests
         }
 
         //12. Double23
+        [TestCase(new int[] {2, 2, 3}, true)]
+        [TestCase(new int[] { 3, 4, 5, 3 }, true)]
+        [TestCase(new int[] { 2, 3, 2, 2 }, false)]
+        public void Double23(int[] a, bool expected)
+        {
+            bool result = Testwarmup.Double23(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //13. Fix23
+        [TestCase(new int[] {1, 2, 3}, new int[] {1, 2, 0})]
+        [TestCase(new int[] { 2, 3, 5 }, new int[] { 2, 0, 5 })]
+        [TestCase(new int[] { 1, 2, 1 }, new int[] { 1, 2, 1 })]
+        public void Fix23(int[] a, int[] expected)
+        {
+            int[] result = Testwarmup.Fix23(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //14. Unlucky1
+        [TestCase(new int[] {1, 3, 4, 5}, true)]
+        [TestCase(new int[] {2, 1, 3, 4, 5}, true)]
+        [TestCase(new int[] {1, 1, 1}, false)]
+        public void Unlucky1(int[] a, bool expected)
+        {
+            bool result = Testwarmup.Unlucky1(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //15. Make2
 
     }
 }
