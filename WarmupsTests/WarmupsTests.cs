@@ -895,6 +895,89 @@ namespace WarmupsTests
         }
 
         //4. CommonEnd
+        [TestCase(new int[] { 1, 2, 3 }, new int[] { 7, 3 }, true)]
+        [TestCase(new int[] { 1, 2, 3 }, new int[] { 7, 3, 2 }, false)]
+        [TestCase(new int[] { 1, 2, 3 }, new int[] { 1, 2 }, true)]
+        public void CommonEnd(int[] a, int[] b, bool expected)
+        {
+            bool result = Testwarmup.CommonEnd(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //5. Sum
+        [TestCase(new int[] {1, 2, 3}, 6)]
+        [TestCase(new int[] {5, 11, 2}, 18)]
+        [TestCase(new int[] {7, 0, 1}, 8)]
+        public void Sum(int[] a, int expected)
+        {
+            int result = Testwarmup.Sum(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //6. RotateLeft
+        [TestCase(new int[] {1, 2, 3}, new int[] {2, 3, 1})]
+        [TestCase(new int[] { 5, 11, 9 }, new int[] { 11, 9, 5 })]
+        [TestCase(new int[] { 7, 0, 0 }, new int[] { 0, 0, 7 })]
+
+        public void RotateLeft(int[] a, int[] expected)
+        {
+            int[] result = Testwarmup.RotateLeft(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //7. Reverse
+        [TestCase(new int[] { 1, 2, 3 }, new int[] { 3, 2, 1 })]
+        [TestCase(new int[] { 5, 2, 6 }, new int[] { 6, 2, 5 })]
+        [TestCase(new int[] { 1, 2, 3, 4 }, new int[] { 4, 3, 2, 1 })]
+        public void Reverse(int[] a, int[] expected)
+        {
+            int[] result = Testwarmup.Reverse(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //8. HigherWins
+        [TestCase(new int[] { 1, 2, 3 }, new int[] { 3, 3, 3 })]
+        [TestCase(new int[] { 11, 5, 9 }, new int[] { 11, 11, 11 })]
+        [TestCase(new int[] { 2, 11, 3 }, new int[] { 3, 3, 3 })]
+        public void HigherWins(int[] a, int[] expected)
+        {
+            int[] result = Testwarmup.HigherWins(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //9. GetMiddle
+        [TestCase(new int[]  {1, 2, 3 }, new int[] { 4, 5, 6 }, new int[] { 2, 5 })]
+        [TestCase(new int[] { 7, 7, 7 }, new int[] { 3, 8, 0 }, new int[] { 7, 8 })]
+        [TestCase(new int[] { 5, 2, 9 }, new int[] { 1, 4, 5 }, new int[] { 2, 4 })]
+        public void GetMiddle(int[] a, int[] b, int[] expected)
+        {
+            int[] result = Testwarmup.GetMiddle(a, b);
+            Assert.AreEqual(result, expected);
+        }
+
+        //10. HasEven
+        [TestCase(new int[] { 2, 5 }, true)]
+        [TestCase(new int[] { 4, 3 }, true)]
+        [TestCase(new int[] { 7, 5 }, false)]
+        [TestCase(new int[] { 3, 5, 7, 9, 11 }, false)]
+        public void HasEven(int[] a, bool expected)
+        {
+            bool result = Testwarmup.HasEven(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //11. KeepLast
+        [TestCase(new int[] {4, 5, 6}, new int[] {0, 0, 0, 0, 0, 6})]
+        [TestCase(new int[] { 1, 2 }, new int[] { 0, 0, 0, 2 })]
+        [TestCase(new int[] { 3 }, new int[] { 0, 3 })]
+        public void KeepLast(int[] a, int[] expected)
+        {
+            int[] result = Testwarmup.KeepLast(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //12. Double23
+
     }
 }
 

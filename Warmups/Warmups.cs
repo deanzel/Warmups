@@ -115,7 +115,12 @@ namespace Warmups
             Console.WriteLine("Dean's Arrays Warmups:\n");
             //Console.WriteLine(prog.FirstLast6(new int[] {6, 1, 2, 3}));
             //Console.WriteLine(prog.SameFirstLast(new int[] {1, 2, 3, 1}));
-            Console.WriteLine(prog.MakePi(3));
+            //Console.WriteLine(prog.MakePi(3));
+            //Console.WriteLine(prog.CommonEnd(new int[] {1, 2, 3}, new int[] {7, 3}));
+            //Console.WriteLine(prog.Sum(new int[] {1, 2, 3}));
+            //Console.WriteLine(prog.RotateLeft(new int[] { 1, 2, 3 }));
+            //Console.WriteLine(prog.Reverse(new int[] {1, 2, 3, 4}));
+
 
 
             Console.ReadLine();
@@ -1300,15 +1305,125 @@ namespace Warmups
 
             for (int i = 0; i < n; i++)
             {
-                double digitD = pi * Math.Pow(10, i);
+                double digitD = pi*Math.Pow(10, i);
                 int digitI = (int) Math.Floor(digitD);
-                int digitIm = digitI % 10;
+                int digitIm = digitI%10;
                 piArray[i] = digitIm;
             }
             return piArray;
         }
 
         //4. CommonEnd
+        public bool CommonEnd(int[] a, int[] b)
+        {
+            if ((a[0] == b[0]) || (a[a.Length - 1] == b[b.Length - 1]))
+            {
+                return true;
+            }
+            return false;
+        }
 
+        //5. Sum
+        public int Sum(int[] numbers)
+        {
+            int sumAll = 0;
+
+            foreach (int i in numbers)
+            {
+                sumAll += i;
+            }
+            return sumAll;
+        }
+
+        //6. RotateLeft
+        public int[] RotateLeft(int[] numbers)
+        {
+            int[] LeftArray = new int[numbers.Length];
+
+            LeftArray[numbers.Length - 1] = numbers[0];
+
+            for (int i = 0; i < numbers.Length - 1; i++)
+            {
+                LeftArray[i] = numbers[i + 1];
+            }
+            return LeftArray;
+        }
+
+        //7. Reverse
+        public int[] Reverse(int[] numbers)
+        {
+            int[] ReverseArray = new int[numbers.Length];
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                ReverseArray[i] = numbers[numbers.Length - 1 - i];
+            }
+            return ReverseArray;
+        }
+
+        //8. HigherWins
+        public int[] HigherWins(int[] numbers)
+        {
+            int[] NewArray = new int[numbers.Length];
+
+            if (numbers[0] >= numbers[numbers.Length - 1])
+            {
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    NewArray[i] = numbers[0];
+                }
+            }
+            else
+            {
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    NewArray[i] = numbers[numbers.Length - 1];
+                }
+            }
+            return NewArray;
+        }
+
+        //9. GetMiddle
+        public int[] GetMiddle(int[] a, int[] b)
+        {
+            int[] NewArray = new int[2];
+            NewArray[0] = a[1];
+            NewArray[1] = b[1];
+            return NewArray;
+        }
+
+        //10. HasEven
+        public bool HasEven(int[] numbers)
+        {
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i]%2 == 0)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //11. KeepLast
+        public int[] KeepLast(int[] numbers)
+        {
+            int[] NewArray = new int[numbers.Length*2];
+
+            for (int i = 0; i < (numbers.Length*2) - 1; i++)
+            {
+                NewArray[i] = 0;
+            }
+            NewArray[(numbers.Length*2) - 1] = numbers[numbers.Length - 1];
+
+            return NewArray;
+        }
+
+        //12. Double23
+        public bool Double23(int[] numbers)
+        {
+
+
+        }
     }
 }
