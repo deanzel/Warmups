@@ -14,7 +14,7 @@ namespace Warmups
         private static void Main(string[] args)
         {
             Warmup prog = new Warmup();
-            Console.WriteLine("Dean's Strings Warmups:\n");
+            //Console.WriteLine("Dean's Strings Warmups:\n");
             //Strings Warmups
             //Console.WriteLine(prog.SayHi("Dean"));
             //Console.WriteLine(prog.Abba("YOLO", "BRO"));
@@ -72,6 +72,7 @@ namespace Warmups
             //Console.WriteLine(prog.EveryNth("Miracle", 2));
 
             //Loops Warmups
+            //Console.WriteLine("Dean's Loops Warmups:\n");
             //Console.WriteLine(prog.StringTimes("Yolo", 3));
             //Console.WriteLine(prog.FrontTimes("Chocolate", 3));
             //Console.WriteLine(prog.CountXX("xxxDx"));
@@ -90,24 +91,32 @@ namespace Warmups
             //Console.WriteLine(prog.NoTriples(new int[] {1, 1, 2, 2, 2, 1}));
             //Console.WriteLine(prog.Pattern51(new int[] {1, 2, 7, 1, 1}));
 
-            //Logics Warmups
-            Console.WriteLine(prog.GreatParty(50, false));
-            Console.WriteLine(prog.CanHazTable(5, 10));
-            Console.WriteLine(prog.PlayOutside(95, true));
-            Console.WriteLine(prog.CaughtSpeeding(65, false));
-            Console.WriteLine(prog.SkipSum(9, 4));
-            Console.WriteLine(prog.AlarmClock(1, false));
-            Console.WriteLine(prog.LoveSix(1, 5));
-            Console.WriteLine(prog.InRange(11, true));
-            Console.WriteLine(prog.SpecialEleven(23));
-            Console.WriteLine(prog.Mod20(20));
-            Console.WriteLine(prog.Mod35(10));
-            Console.WriteLine(prog.AnswerCell(true, false, false));
-            Console.WriteLine(prog.TwoIsOne(3, 1, 2));
-            Console.WriteLine(prog.AreInOrder(1, 2, 4, false));
-            Console.WriteLine(prog.InOrderEqual(2, 5, 11, false));
-            Console.WriteLine(prog.LastDigit(23, 19, 13));
-            Console.WriteLine(prog.RollDice(3, 3, false));
+            //Logic Warmups
+            //Console.WriteLine("Dean's Logic Warmups:\n");
+            //Console.WriteLine(prog.GreatParty(50, false));
+            //Console.WriteLine(prog.CanHazTable(5, 10));
+            //Console.WriteLine(prog.PlayOutside(95, true));
+            //Console.WriteLine(prog.CaughtSpeeding(65, false));
+            //Console.WriteLine(prog.SkipSum(9, 4));
+            //Console.WriteLine(prog.AlarmClock(1, false));
+            //Console.WriteLine(prog.LoveSix(1, 5));
+            //Console.WriteLine(prog.InRange(11, true));
+            //Console.WriteLine(prog.SpecialEleven(23));
+            //Console.WriteLine(prog.Mod20(20));
+            //Console.WriteLine(prog.Mod35(10));
+            //Console.WriteLine(prog.AnswerCell(true, false, false));
+            //Console.WriteLine(prog.TwoIsOne(3, 1, 2));
+            //Console.WriteLine(prog.AreInOrder(1, 2, 4, false));
+            //Console.WriteLine(prog.InOrderEqual(2, 5, 11, false));
+            //Console.WriteLine(prog.LastDigit(23, 19, 13));
+            //Console.WriteLine(prog.RollDice(3, 3, false));
+
+            //Arrays Warmups
+            Console.WriteLine("Dean's Arrays Warmups:\n");
+            Console.WriteLine(prog.FirstLast6(new int[] {6, 1, 2, 3}));
+            Console.WriteLine(prog.SameFirstLast(new int[] {1, 2, 3, 1}));
+            Console.WriteLine(prog.MakePi(3));
+
 
             Console.ReadLine();
         }
@@ -377,6 +386,7 @@ namespace Warmups
                 return String.Format(str);
             }
         }
+
 
 
         //Conditionals Warmups:
@@ -725,6 +735,7 @@ namespace Warmups
 
 
 
+
         //Loops Warmups:
 
         //1. StringTimes
@@ -994,6 +1005,8 @@ namespace Warmups
         }
 
 
+
+
         //Logic Warmups:
 
         //1. GreatParty
@@ -1249,6 +1262,57 @@ namespace Warmups
                 }
             }
             return die1 + die2;
+        }
+
+
+
+        //Arrays Warmups:
+
+        //1. FirstLast6
+        public bool FirstLast6(int[] numbers)
+        {
+            if (numbers[0] == 6 || numbers[numbers.Length - 1] == 6)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        //2. SameFirstLast
+        public bool SameFirstLast(int[] numbers)
+        {
+            if (numbers.Length >= 1)
+            {
+                if (numbers[0] == numbers[numbers.Length - 1])
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //3. MakePi
+        public int[] MakePi(int n)
+        {
+            double pi = Math.PI;
+            int[] piArray = new int[n];
+
+            //for (int i = 1; i < Math.Pow(10, n); i++)
+            //{
+            //    double digitD = (pi * Math.Pow(10, i)) % 10;
+            //    int digitI = (int) digitD;
+            //    piArray[i] = digitI;
+            //}
+
+            for (int i = 0; i < n; i++)
+            {
+                double digitD = pi * Math.Pow(10, i);
+                int digitI = (int) digitD;
+                int digitIm = digitI % 10;
+                piArray[i] = digitIm;
+            }
+
+            return piArray;
         }
     }
 }

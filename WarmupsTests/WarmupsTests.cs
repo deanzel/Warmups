@@ -860,6 +860,31 @@ namespace WarmupsTests
             int result = Testwarmup.RollDice(a, b, c);
             Assert.AreEqual(result, expected);
         }
+
+
+        //Arrays Tests:
+
+        //1. FirstLast6
+        [TestCase(new int[] {1, 2, 6}, true)]
+        [TestCase(new int[] {6, 1, 2, 3}, true)]
+        [TestCase(new int[] {13, 6, 1, 2, 3}, false)]
+        public void FirstLast6(int[] a, bool expected)
+        {
+            bool result = Testwarmup.FirstLast6(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //2. SameFirstLast
+        [TestCase(new int[] {1, 2, 3}, false)]
+        [TestCase(new int[] {1, 2, 3, 1}, true)]
+        [TestCase(new int[] {1, 2, 1}, true)]
+        public void SameFirstLast(int[] a, bool expected)
+        {
+            bool result = Testwarmup.SameFirstLast(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //3. MakePi
     }
 }
 
