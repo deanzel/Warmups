@@ -113,8 +113,8 @@ namespace Warmups
 
             //Arrays Warmups
             Console.WriteLine("Dean's Arrays Warmups:\n");
-            Console.WriteLine(prog.FirstLast6(new int[] {6, 1, 2, 3}));
-            Console.WriteLine(prog.SameFirstLast(new int[] {1, 2, 3, 1}));
+            //Console.WriteLine(prog.FirstLast6(new int[] {6, 1, 2, 3}));
+            //Console.WriteLine(prog.SameFirstLast(new int[] {1, 2, 3, 1}));
             Console.WriteLine(prog.MakePi(3));
 
 
@@ -1296,23 +1296,19 @@ namespace Warmups
         {
             double pi = Math.PI;
             int[] piArray = new int[n];
-
-            //for (int i = 1; i < Math.Pow(10, n); i++)
-            //{
-            //    double digitD = (pi * Math.Pow(10, i)) % 10;
-            //    int digitI = (int) digitD;
-            //    piArray[i] = digitI;
-            //}
+            string piIterated = "";
 
             for (int i = 0; i < n; i++)
             {
                 double digitD = pi * Math.Pow(10, i);
-                int digitI = (int) digitD;
+                int digitI = (int) Math.Floor(digitD);
                 int digitIm = digitI % 10;
                 piArray[i] = digitIm;
             }
-
             return piArray;
         }
+
+        //4. CommonEnd
+
     }
 }

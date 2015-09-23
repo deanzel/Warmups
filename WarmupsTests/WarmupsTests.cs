@@ -885,6 +885,16 @@ namespace WarmupsTests
         }
 
         //3. MakePi
+        [TestCase(3, new int[] { 3, 1, 4 })]
+        [TestCase(5, new int[] { 3, 1, 4, 1, 5 })]
+        [TestCase(7, new int[] { 3, 1, 4, 1, 5, 9, 2 })]
+        public void MakePi(int a, int[] expected)
+        {
+            int[] result = Testwarmup.MakePi(a);
+            Assert.AreEqual(result, expected);
+        }
+
+        //4. CommonEnd
     }
 }
 
