@@ -1299,7 +1299,7 @@ namespace Warmups
         {
             double pi = Math.PI;
             int[] piArray = new int[n];
-            string piIterated = "";
+            
 
             for (int i = 0; i < n; i++)
             {
